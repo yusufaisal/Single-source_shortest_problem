@@ -18,8 +18,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="189" column="29" lean-forward="true" selection-start-line="189" selection-start-column="29" selection-end-line="189" selection-end-column="29" />
+            <state relative-caret-position="288">
+              <caret line="185" column="34" lean-forward="false" selection-start-line="185" selection-start-column="34" selection-end-line="185" selection-end-column="34" />
               <folding>
                 <element signature="e#44#132#0" expanded="false" />
                 <element signature="e#154#274#0" expanded="false" />
@@ -255,6 +255,14 @@
       <option name="presentableId" value="Default" />
       <updated>1510802309357</updated>
     </task>
+    <task id="LOCAL-00001" summary="Final Code">
+      <created>1510834432135</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1510834432135</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -288,6 +296,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Final Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -329,8 +341,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="189" column="29" lean-forward="true" selection-start-line="189" selection-start-column="29" selection-end-line="189" selection-end-column="29" />
+        <state relative-caret-position="288">
+          <caret line="185" column="34" lean-forward="false" selection-start-line="185" selection-start-column="34" selection-end-line="185" selection-end-column="34" />
           <folding>
             <element signature="e#44#132#0" expanded="false" />
             <element signature="e#154#274#0" expanded="false" />

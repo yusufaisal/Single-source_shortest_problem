@@ -62,7 +62,7 @@ class ConnectedList:
             cur = cur.next
             print "------>",cur.node.label,cur.weight
 
-def createGraf(linkedList):
+def createGrafA(linkedList):
     linkedList.append("S")  # Start
     linkedList.append("A")
     linkedList.append("B")
@@ -142,6 +142,144 @@ def createGraf(linkedList):
 
     X = G.next
     X.connected = ConnectedList()
+def createGrafB(linkedList):
+    linkedList.append("S")  # Start
+    linkedList.append("A")
+    linkedList.append("B")
+    linkedList.append("C")
+    linkedList.append("D")
+    linkedList.append("E")
+    linkedList.append("F")
+    linkedList.append("G")  # Finish
+    linkedList.append("H")
+    linkedList.append("I")
+    linkedList.append("J")
+    linkedList.append("K")
+    linkedList.append("L")
+
+    S = linkedList.head.next
+
+    S.connected = ConnectedList()
+    get = linkedList.find("A")
+    S.connected.append(get, 99)
+    get = linkedList.find("B")
+    S.connected.append(get, 100)
+    get = linkedList.find("C")
+    S.connected.append(get, 82)
+
+    A=S.next
+    A.connected = ConnectedList()
+    get = linkedList.find("S")
+    A.connected.append(get, 99)
+    get = linkedList.find("F")
+    A.connected.append(get, 120)
+    get = linkedList.find("D")
+    A.connected.append(get, 70)
+
+    B = A.next
+    B.connected = ConnectedList()
+    get = linkedList.find("S")
+    B.connected.append(get, 100)
+    get = linkedList.find("D")
+    B.connected.append(get, 80)
+    get = linkedList.find("E")
+    B.connected.append(get, 100)
+
+    C = B.next
+    C.connected = ConnectedList()
+    get = linkedList.find("S")
+    C.connected.append(get, 82)
+    get = linkedList.find("F")
+    C.connected.append(get, 101)
+    get = linkedList.find("H")
+    C.connected.append(get, 29)
+
+    D = C.next
+    D.connected = ConnectedList()
+    get = linkedList.find("A")
+    D.connected.append(get, 70)
+    get = linkedList.find("B")
+    D.connected.append(get, 80)
+
+    E = D.next
+    E.connected = ConnectedList()
+    get = linkedList.find("B")
+    E.connected.append(get, 100)
+    get = linkedList.find("K")
+    E.connected.append(get, 90)
+    get = linkedList.find("J")
+    E.connected.append(get, 49)
+    get = linkedList.find("G")
+    E.connected.append(get, 129)
+
+    F = E.next
+    F.connected = ConnectedList()
+    get = linkedList.find("A")
+    F.connected.append(get, 120)
+    get = linkedList.find("C")
+    F.connected.append(get, 101)
+    get = linkedList.find("I")
+    F.connected.append(get, 20)
+    get = linkedList.find("K")
+    F.connected.append(get, 91)
+
+    G = F.next
+    G.connected = ConnectedList()
+    get = linkedList.find("E")
+    G.connected.append(get, 129)
+    get = linkedList.find("J")
+    G.connected.append(get, 69)
+
+    H = G.next
+    H.connected = ConnectedList()
+    get = linkedList.find("L")
+    H.connected.append(get, 130)
+    get = linkedList.find("C")
+    H.connected.append(get, 29)
+    get = linkedList.find("I")
+    H.connected.append(get, 73)
+
+    I = H.next
+    I.connected = ConnectedList()
+    get = linkedList.find("F")
+    I.connected.append(get, 20)
+    get = linkedList.find("H")
+    I.connected.append(get, 73)
+    get = linkedList.find("J")
+    I.connected.append(get, 50)
+    get = linkedList.find("K")
+    I.connected.append(get, 100)
+
+    J = I.next
+    J.connected = ConnectedList()
+    get = linkedList.find("E")
+    J.connected.append(get, 49)
+    get = linkedList.find("G")
+    J.connected.append(get, 69)
+    get = linkedList.find("I")
+    J.connected.append(get, 50)
+    get = linkedList.find("K")
+    J.connected.append(get, 70)
+
+    K = J.next
+    K.connected = ConnectedList()
+    get = linkedList.find("E")
+    K.connected.append(get, 90)
+    get = linkedList.find("F")
+    K.connected.append(get, 50)
+    get = linkedList.find("I")
+    K.connected.append(get, 100)
+    get = linkedList.find("J")
+    K.connected.append(get, 70)
+    get = linkedList.find("L")
+    K.connected.append(get, 99)
+
+    L = K.next
+    L.connected = ConnectedList()
+    get = linkedList.find("K")
+    L.connected.append(get, 99)
+    get = linkedList.find("H")
+    L.connected.append(get, 130)
 
 def find(arr, item):
     for i in range(len(arr)):
@@ -178,7 +316,7 @@ if __name__=="__main__":
     RouteSet = []
 
     #Create Graf
-    createGraf(L)
+    createGrafB(L)
     L.display()
 
     #Find the Shortest Route
@@ -194,4 +332,4 @@ if __name__=="__main__":
     #Show the Optimum Route
     RouteSet.sort(key=lambda Route: Route.weight)
     print "Optimum Route Solution: "
-    print RouteSet[0].route, RouteSet[0].weight
+    # print RouteSet[0].route, RouteSet[0].weight

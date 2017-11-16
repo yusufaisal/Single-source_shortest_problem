@@ -332,4 +332,4 @@ if __name__=="__main__":
     #Show the Optimum Route
     RouteSet.sort(key=lambda Route: Route.weight)
     print "Optimum Route Solution: "
-    # print RouteSet[0].route, RouteSet[0].weight
+    print RouteSet[0].route, RouteSet[0].weight

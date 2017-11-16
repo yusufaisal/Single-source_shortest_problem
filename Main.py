@@ -182,8 +182,8 @@ if __name__=="__main__":
     L.display()
 
     #Find the Shortest Route
-    V = L.find("B")
-    G = "G"
+    V = L.find("S") #Set Starting Node
+    G = "G"         #Set Goal Node
     print V.label
     walkingWalking(V,G,verboden,0,route)
 

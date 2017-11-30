@@ -1,8 +1,8 @@
 from copy import deepcopy
 
 class Route:
-    def __init__(self,route,weight):
-        self.weight = weight
+    def __init__(self,route,cost):
+        self.cost = cost
         self.route = route
 class childNode:
     def __init__(self,node=None,weight=None):
@@ -281,55 +281,51 @@ def createGrafB(linkedList):
     get = linkedList.find("H")
     L.connected.append(get, 130)
 
-def find(arr, item):
+def find(item, arr):
     for i in range(len(arr)):
         if arr[i]==item:
             return True
     return False
-def walkingWalking(node,goal,verboden,w,route):
-    cur  = node.connected.head
+def walkingWalking(current,goal,cost,route):
+    cur  = current.connected.head
 
     #Pass by Value using Deepcopy
     new_route = deepcopy(route)
-    new_verboden = deepcopy(verboden)
-    new_route.append(node.label)
+    new_route.append(current.label)
 
-    while cur.next!=None and node.label != goal:
+    while (cur.next!=None) and (current.label != goal):
         cur = cur.next
-        if not find(new_verboden, cur.node.label):
-            new_verboden.append(node.label)
-            new_w = deepcopy(w)+cur.weight
+        if not find(cur.node.label, new_route):
+            new_cost = deepcopy(cost)+cur.weight
+            walkingWalking(cur.node,goal,new_cost,new_route)
 
-            walkingWalking(cur.node,goal,new_verboden,new_w,new_route)
-
-    if node.label==goal:
-        RouteSet.append(Route(new_route,w))
+    if current.label==goal:
+        RouteSet.append(Route(new_route,cost))
         return 0
     else:
         return 1
 
 if __name__=="__main__":
     #Initialize
-    L = LinkedList()
-    verboden = []
+    Map = LinkedList()
     route = []
     RouteSet = []
 
     #Create Graf
-    createGrafB(L)
-    L.display()
+    createGrafB(Map)
+    # Map.display()
 
     #Find the Shortest Route
-    V = L.find("S") #Set Starting Node
-    G = "G"         #Set Goal Node
-    walkingWalking(V,G,verboden,0,route)
+    Start = Map.find("S")   #Set Starting Node
+    Goal = "G"              #Set Goal Node
+    walkingWalking(Start,Goal,0,route)
 
     #Show All Available Route
     for i in range(len(RouteSet)):
-        print RouteSet[i].route,RouteSet[i].weight
+        print RouteSet[i].route,RouteSet[i].cost
     print
 
     #Show the Optimum Route
-    RouteSet.sort(key=lambda Route: Route.weight)
+    RouteSet.sort(key=lambda Route: Route.cost)
     print "Optimum Route Solution: "
-    print RouteSet[0].route, RouteSet[0].weight
+    print RouteSet[0].route, RouteSet[0].cost
